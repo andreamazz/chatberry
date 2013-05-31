@@ -1,0 +1,14 @@
+{
+    "author": "Andrea Mazzini", 
+    "dependencies": {
+        "express": "3.x", 
+        "ejs": "*",
+        "socket.io": "*",
+        "ejs-locals": "*",
+        "connect-assets": "*"
+    }, 
+    "description": "Node/Express.js scoreboard", 
+    "main": "./server.coffee", 
+    "name": "Scoreboard", 
+    "version": "0.0.1"
+}
