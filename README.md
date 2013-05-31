@@ -1,4 +1,4 @@
-AMSlideOutNavigationController
+Chatberry
 ==================
 
 Simple Node.js + Express.js + Socket.io chat.  
