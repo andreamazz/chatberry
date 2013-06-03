@@ -1,5 +1,7 @@
-io = require('socket.io').listen(3000)
-app = require('./app').init(8080);
+express = require('./app').init(3000)
+app = express["app"]
+server = express["server"]
+io = require('socket.io').listen(server)
 
 locals = {
 	title: 		 'Chatberry',

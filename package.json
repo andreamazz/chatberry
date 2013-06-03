@@ -7,8 +7,8 @@
         "ejs-locals": "*",
         "connect-assets": "*"
     }, 
-    "description": "Node/Express.js scoreboard", 
+    "description": "Node/Express.js chat", 
     "main": "./server.coffee", 
-    "name": "Scoreboard", 
+    "name": "Chatberry", 
     "version": "0.0.1"
 }

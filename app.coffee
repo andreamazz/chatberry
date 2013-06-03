@@ -20,13 +20,13 @@ exports.init = (port) ->
 		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }))
 
 	app.configure 'production', () ->
-       app.use(express.errorHandler())
+		app.use(express.errorHandler())
 
 	app.use (err, req, res, next) ->
 		res.render '500.ejs', { locals: { error: err }, status: 500 }
     
 	server = app.listen port
-
+	
 	console.log "Listening on port #{server.address().port} in #{app.settings.env} mode"
 	
-	return app
+	return { "app": app, "server": server }

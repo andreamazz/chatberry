@@ -1,7 +1,7 @@
 $ ->
 	$('#chat-bar').hide()
 	window.username = "Dude"
-	socket = io.connect 'http://10.24.2.6:3000'
+	socket = io.connect 'http://localhost:3000'
 	socket.on 'connect', () ->
 		logger "Connected"
 		user = socket.socket.sessionid
