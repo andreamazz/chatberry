@@ -1,7 +1,7 @@
 Chatberry
 ==================
 
-Simple Node.js + Express.js + Socket.io chat.  
+Simple Node.js + Express.js + Socket.io + Redis + Handlebars chat.  
 It's just a sample application to test Node on a Raspberry PI, but it can also be a useful boilerplate application.  
 Besides... the name is catchy :D  
 The artwork included is awesome... please don't sue me Mr. Berry!
@@ -10,12 +10,30 @@ The artwork included is awesome... please don't sue me Mr. Berry!
 Installation
 --------------------
 * ```npm install``` from the project's path
-* Change the URL for socket.io.js in the client's layout.ejs and server.coffee
+* Change the URL for socket.io in the server.coffee
 
 On your Raspberry:
 --------------------
 If you have some issues installing the npm packages:
 ```npm config set registry http://registry.npmjs.org```
+
+Installing Node.js (thanks to [Matt's Blog](http://blog.rueedlinger.ch/2013/03/raspberry-pi-and-nodejs-basic-setup/)):  
+
+    sudo mkdir /opt/node
+    wget http://nodejs.org/dist/v0.10.2/node-v0.10.2-linux-arm-pi.tar.gz
+    tar xvzf node-v0.10.2-linux-arm-pi.tar.gz
+    sudo cp -r node-v0.10.2-linux-arm-pi/* /opt/node
+    nano /etc/profile
+    
+Add the following lines:  
+
+    NODE_JS_HOME="/opt/node"
+    PATH="$PATH:$NODE_JS_HOME/bin"
+    export PATH
+
+Redis install:  
+```curl https://raw.github.com/adafruit/Adafruit-WebIDE/alpha/scripts/install.sh | sudo sh```
+
 
 
 MIT License

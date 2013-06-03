@@ -1,6 +1,6 @@
 $ ->
 	$('#chat-bar').hide()
-	window.username = "Dude"
+	window.username = "The Nameless One"
 	socket = io.connect 'http://localhost:3000'
 	socket.on 'connect', () ->
 		logger "Connected"
@@ -19,7 +19,7 @@ $ ->
 				
 	$('#chat-form').submit (event) ->
 		event.preventDefault()
-		socket.emit 'message', { username: window.username, text: $('#text').val() }
+		socket.emit 'message', { text: $('#text').val() }
 		$('#text').val("")
 		  
 	socket.on 'error', () ->

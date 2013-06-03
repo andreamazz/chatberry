@@ -1,20 +1,25 @@
 express = require('express')
-engine = require('ejs-locals')
+engine = require('express-hbs')
 app = express()
+
+handlebar_helpers = require('./lib/handlebar_helpers')(engine)
 
 exports.init = (port) ->
 	
 	app.configure () ->
-		app.set('views', __dirname + '/views')
-		app.set('view engine', 'ejs')
 		app.use(express.bodyParser())
 		app.use(express.methodOverride())
 		app.use(express.static(__dirname + '/static'))
 		app.use(app.router)
 		app.enable("jsonp callback")
-		app.engine('ejs', engine)
+		app.engine('hbs', engine.express3({
+			defaultLayout: __dirname + '/views/layout.hbs',
+			contentHelperName: 'content',
+		}))
+		app.set('view engine', 'hbs')
+		app.set('views', __dirname + '/views')
 		# enables coffeescript compilation
-		app.use require('connect-assets')()
+		app.use require('connect-assets') dst: "#{__dirname}/public/js"
 
 	app.configure 'development', () ->
 		app.use(express.errorHandler({ dumpExceptions: true, showStack: true }))

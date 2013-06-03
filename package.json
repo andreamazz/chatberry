@@ -1,14 +1,18 @@
 {
     "author": "Andrea Mazzini", 
     "dependencies": {
+        "connect-assets": "latest", 
+        "express-hbs": "latest", 
         "express": "3.x", 
-        "ejs": "*",
-        "socket.io": "*",
-        "ejs-locals": "*",
-        "connect-assets": "*"
+        "redis": "latest", 
+        "socket.io": "latest"
     }, 
     "description": "Node/Express.js chat", 
     "main": "./server.coffee", 
     "name": "Chatberry", 
+    "repository": {
+        "type": "git", 
+        "url": "https://github.com/andreamazz/chatberry"
+    }, 
     "version": "0.0.1"
 }
