@@ -19,3 +19,11 @@ body {
 #chat-form > #text {
   width: 80%;
 }
+
+.old-message {
+	color: #888;
+}
+
+.your-message {
+	color: #88f;
+}

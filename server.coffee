@@ -23,7 +23,7 @@ io.sockets.on 'connection', (socket) ->
 			messages = messages.reverse()
 			for message in messages
 				message = JSON.parse message
-				socket.emit 'new_message', { username: message.username, text: message.text } 
+				socket.emit 'old_message', { username: message.username, text: message.text } 
 		
 		
 	socket.on 'message', (data) ->
